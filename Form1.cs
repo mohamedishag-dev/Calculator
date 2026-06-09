@@ -83,8 +83,9 @@ namespace Calculator
                 return FirstNumber * double.Parse(labResult.Text);
 
             else
-                return FirstNumber / double.Parse(labResult.Text);
-            
+                if (double.Parse(labResult.Text) != 0)
+                   return FirstNumber / double.Parse(labResult.Text);
+            return 0;
         }
 
         private void btnResult_Click(object sender, EventArgs e)
