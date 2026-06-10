@@ -8,3 +8,13 @@ E:\ProgarmmingAdvises\Calculator\obj\Debug\Calculator.csproj.GenerateResource.ca
 E:\ProgarmmingAdvises\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
 E:\ProgarmmingAdvises\Calculator\obj\Debug\Calculator.exe
 E:\ProgarmmingAdvises\Calculator\obj\Debug\Calculator.pdb
+E:\Profects\Calculator\bin\Debug\Calculator.exe.config
+E:\Profects\Calculator\bin\Debug\Calculator.exe
+E:\Profects\Calculator\bin\Debug\Calculator.pdb
+E:\Profects\Calculator\obj\Debug\Calculator.csproj.AssemblyReference.cache
+E:\Profects\Calculator\obj\Debug\Calculator.Form1.resources
+E:\Profects\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+E:\Profects\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+E:\Profects\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+E:\Profects\Calculator\obj\Debug\Calculator.exe
+E:\Profects\Calculator\obj\Debug\Calculator.pdb

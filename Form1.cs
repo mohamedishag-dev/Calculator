@@ -13,7 +13,7 @@ namespace Calculator
     public partial class Form1 : Form
     {
         private double FirstNumber = 0;
-        private string operationPerformed = "";
+        private string operation = "";
 
         public Form1()
         {
@@ -22,13 +22,19 @@ namespace Calculator
         private void Form1_Load(object sender, EventArgs e)
         {
             labScreen.Text = "";
-            labResult.Text = "";
+            labResult.Text = "0";
         }
 
         private void NumbersBTNsClick(Button btn)
         {
             labScreen.Text += btn.Tag.ToString();
-            labResult.Text += btn.Tag.ToString();
+            if (labResult.Text == "0")
+            {
+                labResult.Text = btn.Tag.ToString();
+
+            }
+            else
+                labResult.Text += btn.Tag.ToString();
 
         }
 
@@ -48,8 +54,8 @@ namespace Calculator
                     labScreen.Text = labResult.Text;
                 }
                 FirstNumber = double.Parse(labResult.Text);
-                operationPerformed = btn.Tag.ToString();
-                labScreen.Text += " " + operationPerformed + " ";
+                operation = btn.Tag.ToString();
+                labScreen.Text += " " + operation + " ";
                 labResult.Text = "";
 
             }
@@ -61,44 +67,52 @@ namespace Calculator
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void ClaerScreen_Click(object sender, EventArgs e)
         {
-            operationPerformed = "";
+            operation = "";
             labScreen.Text = "";
-            labResult.Text = "";
+            labResult.Text = "0";
             FirstNumber = 0;
 
         }
 
-        private double Result()
+        private double Calcaulator()
         {
+            switch(operation)
+            {
+                case "+":
+                    return FirstNumber + double.Parse(labResult.Text);
+                    break;
+                case "-":
+                    return FirstNumber - double.Parse(labResult.Text);
+                    break;
+                case "*":
+                    return FirstNumber * double.Parse(labResult.Text);
+                    break;
+                case "/":
+                    if (double.Parse(labResult.Text) > 0)
+                        return FirstNumber / double.Parse(labResult.Text); 
+                    break;
 
-            if (operationPerformed == "+")
-                return FirstNumber + double.Parse(labResult.Text);
+                default:
+                    return FirstNumber + double.Parse(labResult.Text);
 
-            else if (operationPerformed == "-")
-                return FirstNumber - double.Parse(labResult.Text);
+            }
 
-            else if (operationPerformed == "*")
-                return FirstNumber * double.Parse(labResult.Text);
-
-            else
-                if (double.Parse(labResult.Text) != 0)
-                   return FirstNumber / double.Parse(labResult.Text);
             return 0;
         }
 
-        private void btnResult_Click(object sender, EventArgs e)
+        private void GetFirstNumber(object sender, EventArgs e)
         {
 
             labScreen.Text = "";
-            FirstNumber = Result();
+            FirstNumber = Calcaulator();
             labResult.Text = FirstNumber.ToString();
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            if (labResult.Text != "")
+            if (labResult.Text != "0" &&labResult.Text != "" && !labResult.Text.Contains(".")) 
             {
 
                 labScreen.Text += ".".ToString();
@@ -119,6 +133,19 @@ namespace Calculator
             }
 
         }
-    
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+
+            // if (labResult.Text.Contains("(")) labResult.Text += ")";
+            // // else if (labResult.Text.Contains(")")) labResult.Text += ")";
+            //else labResult.Text += "(";
+
+        }
+
+        private void btn8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
